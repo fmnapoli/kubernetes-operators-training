@@ -1,5 +1,20 @@
-venv/
+# Arquivos de build
 site/
+
+# Ambiente virtual
+venv/
+.venv/
+ENV/
+
+# Cache do Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistema
 .DS_Store
+Thumbs.db
