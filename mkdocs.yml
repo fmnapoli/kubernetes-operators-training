@@ -1,6 +1,6 @@
 site_name: Treinamento Kubernetes Operators com Go
 site_description: Treinamento self-paced para desenvolvimento de Operators Kubernetes com Go
-site_author: Felipe Napoli
+site_author: Fabrizio Malta Di Napoli
 site_url: https://fmnapoli.github.io/kubernetes-operators-training/
 repo_url: https://github.com/fmnapoli/kubernetes-operators-training
 edit_uri: edit/main/docs/
