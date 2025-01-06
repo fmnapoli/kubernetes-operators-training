@@ -1,0 +1,59 @@
+site_name: Treinamento Kubernetes Operators com Go
+site_description: Treinamento self-paced para desenvolvimento de Operators Kubernetes com Go
+site_author: Felipe Napoli
+repo_url: https://github.com/fmnapoli/kubernetes-operators-training
+
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Mudar para modo escuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Mudar para modo claro
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+  - mermaid2
+
+nav:
+  - Home: index.md
+  - Dias:
+    - Dia 1 - Fundamentos: dias/dia1.md
+    - Dia 2 - Client-go: dias/dia2.md
+    - Dia 3 - CRDs: dias/dia3.md
+    - Dia 4 - Controller Runtime: dias/dia4.md
+    - Dia 5 - Testes e Deploy: dias/dia5.md
+    - Dia 6 - Tópicos Avançados: dias/dia6.md
+    - Dia 7 - Boas Práticas: dias/dia7.md
+    - Dia 8 - Ferramentas: dias/dia8.md
+    - Dia 9 - Produção: dias/dia9.md
+    - Dia 10 - Projeto Final: dias/dia10.md
+  - Exemplos: exemplos/index.md
+  - Exercícios: exercicios/index.md
