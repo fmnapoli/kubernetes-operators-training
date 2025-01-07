@@ -7,27 +7,58 @@ Bem-vindo ao treinamento self-paced de desenvolvimento de Operators Kubernetes u
 Este treinamento foi desenvolvido para capacitar desenvolvedores a construir e implantar Operators Kubernetes,
 abordando desde conceitos básicos até tópicos avançados.
 
-- **Duração**: 10 dias (1-1.5h por dia)
-- **Formato**: Self-paced com exemplos práticos
-- **Pré-requisitos**: Conhecimento básico de Go e familiaridade com Kubernetes
+## Pré-requisitos
+
+- Conhecimento de Go:
+  - Sintaxe básica
+  - Estruturas de dados
+  - Goroutines e channels
+  - Testes unitários
+  
+- Familiaridade com Kubernetes:
+  - Pods e deployments
+  - Services
+  - Conceitos de control plane
+  - kubectl básico
 
 ## Estrutura do Curso
 
-O treinamento está organizado em 10 dias, cada um focando em aspectos específicos do desenvolvimento
-de Operators Kubernetes. Cada dia inclui:
+O treinamento está organizado em 3 módulos principais:
 
-- Conceitos teóricos
-- Exemplos práticos
-- Exercícios hands-on
-- Recursos complementares
+### Módulo 1: Fundamentos (Dias 1-4)
 
-## Como Usar Este Material
+- Arquitetura Kubernetes
+- APIs e recursos
+- Client-go
+- Controllers e CRDs
 
-1. Siga os dias na ordem apresentada
-2. Complete os exercícios práticos
-3. Experimente os exemplos de código
-4. Consulte os recursos adicionais
+### Módulo 2: Desenvolvimento (Dias 5-7)
+
+- Controller Runtime
+- Testes e debugging
+- Webhooks e validação
+- Boas práticas
+
+### Módulo 3: Produção (Dias 8-10)
+
+- Ferramentas e SDKs
+- Operadores em produção
+- Monitoramento
+- Projeto final
+
+## Como Usar
+
+1. Cada dia possui:
+   - Material teórico
+   - Exemplos práticos
+   - Exercícios
+
+2. Recomendações:
+   - Faça os exercícios
+   - Explore os exemplos
+   - Mantenha um cluster de testes
+   - Use os recursos complementares
 
 ## Começando
 
-Para iniciar o treinamento, comece pelo [Dia 1 - Fundamentos](dias/dia1.md).
+Para iniciar o treinamento, navegue para [Dia 1 - Introdução](dia1/01-introducao.md).
