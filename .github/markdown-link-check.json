@@ -4,7 +4,7 @@
       "pattern": "^http://localhost"
     },
     {
-      "pattern": "^#"
+      "pattern": "^https://localhost"
     }
   ],
   "replacementPatterns": [
@@ -13,8 +13,17 @@
       "replacement": "{{BASEURL}}/"
     }
   ],
+  "httpHeaders": [
+    {
+      "urls": ["https://docs.github.com"],
+      "headers": {
+        "Accept": "application/vnd.github.v3+json"
+      }
+    }
+  ],
   "timeout": "20s",
   "retryOn429": true,
-  "retryCount": 3,
-  "fallbackRetryDelay": "30s"
+  "retryCount": 5,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206]
 }

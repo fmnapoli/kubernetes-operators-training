@@ -1,48 +1,62 @@
-# Introdução ao Kubernetes
+# Dia 0 - Preparação do Ambiente
 
-## Objetivos de Aprendizado
+## Visão Geral
 
-- Compreender a arquitetura Kubernetes e seus componentes principais
-- Entender o funcionamento da API Kubernetes
-- Aprender a interagir com o cluster usando kubectl e chamadas API diretas
-- Criar e gerenciar recursos básicos Kubernetes
+Para desenvolver Operators Kubernetes precisamos de um ambiente completo que inclui:
 
-## Pré-requisitos
+- Linguagem de programação (Go)
+- Container runtime (Docker) 
+- Cluster Kubernetes local (Kind)
+- Registry local para imagens
+- Ferramentas de desenvolvimento
 
-- Conhecimento básico de containers e Docker
-- Familiaridade com linha de comando Linux
-- Compreensão básica de APIs REST
-- Go instalado (versão 1.16+)
+## Requisitos de Hardware
 
-## Arquitetura Kubernetes
+- CPU: 4+ cores
+- RAM: 8GB+ 
+- Disco: 20GB+ livre
+- Sistema: Ubuntu/Debian
 
-```mermaid
-graph TD
-    User[Usuario] --> API[API Server]
-    subgraph Control Plane
-        API --> ETCD[etcd]
-        API --> CM[Controller Manager]
-        API --> SCHED[Scheduler]
-        CM --> API
-        SCHED --> API
-    end
-    subgraph Worker Nodes
-        API --> KB1[Kubelet Node 1]
-        API --> KB2[Kubelet Node 2]
-        KB1 --> CNT1[Containers]
-        KB2 --> CNT2[Containers]
-    end
-```
+## Componentes do Ambiente
 
-### Componentes Principais
+### Go Toolchain
+- Compilador Go
+- Ferramentas de teste e build
+- GOPATH configurado
 
-1. **Control Plane**
-   - API Server: Ponto central de comunicação
-   - etcd: Banco de dados distribuído
-   - Controller Manager: Executa controladores
-   - Scheduler: Distribui pods nos nodes
+### Container Runtime
+- Docker Engine 
+- Acesso ao Docker Hub
+- Grupo docker configurado
 
-2. **Worker Nodes**
-   - Kubelet: Agente em cada node
-   - Container Runtime: Docker/containerd
-   - Kube-proxy: Networking
+### Kubernetes Local
+- Kind (Kubernetes in Docker)
+- Registry local integrado 
+- Kubectl CLI
+
+### Ferramentas de Desenvolvimento
+- Kubebuilder: Framework para operators
+- Kustomize: Gerenciamento de configuração K8s
+- Tilt: Hot reload para desenvolvimento
+
+## Próximos Passos
+
+1. [Instalação Manual](./02-instalacao-manual.md)
+2. [Script Automatizado](./03-script-automacao.md)
+3. [Validação do Ambiente](./04-validacao.md)
+
+## Verificação da Instalação
+
+Para validar se o ambiente foi configurado corretamente, utilize os scripts fornecidos na pasta [scripts](./scripts/):
+
+- `setup-ambiente.sh`: Instala e configura todos os componentes
+- `validate-env.sh`: Valida a instalação e funcionamento do ambiente
+
+## Problemas Comuns
+
+Caso encontre problemas durante a instalação:
+
+1. Verifique os logs de erro
+2. Consulte a documentação oficial de cada ferramenta
+3. Verifique permissões de usuário
+4. Valide requisitos de sistema
