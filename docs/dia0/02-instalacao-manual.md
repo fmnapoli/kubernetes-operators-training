@@ -2,21 +2,23 @@
 
 ## Go
 
-1. Baixar última versão:
+### Instalação
+
+- Baixar última versão:
 
 ```bash
 GO_VERSION=$(curl -s https://go.dev/VERSION?m=text)
 wget "https://go.dev/dl/${GO_VERSION}.linux-amd64.tar.gz"
 ```
 
-2. Instalar:
+- Instalar:
 
 ```bash
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "${GO_VERSION}.linux-amd64.tar.gz"
 ```
 
-3. Configurar ambiente:
+- Configurar ambiente:
 
 ```bash
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
@@ -27,29 +29,37 @@ source ~/.bashrc
 
 ## Docker
 
-1. Instalar dependências:
+### Dependências
+
+- Atualizar sistema:
 
 ```bash
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
 ```
 
-2. Adicionar repositório:
+- Adicionar chave GPG:
 
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 ```
 
-3. Instalar Docker:
+- Configurar repositório:
+
+```bash
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+### Instalação
+
+- Instalar pacotes:
 
 ```bash
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 ```
 
-4. Configurar usuário:
+- Configurar usuário:
 
 ```bash
 sudo usermod -aG docker $USER
@@ -58,19 +68,23 @@ newgrp docker
 
 ## Kind e Registry Local
 
-1. Instalar Kind:
+### Kind
+
+- Instalação:
 
 ```bash
 go install sigs.k8s.io/kind@latest
 ```
 
-2. Criar registry local:
+### Registry Local
+
+- Criar container:
 
 ```bash
 docker run -d --name kind-registry -p 5001:5000 --restart=always registry:2
 ```
 
-3. Criar cluster com registry:
+- Criar cluster com registry:
 
 ```bash
 cat << EOF > kind-config.yaml
@@ -94,14 +108,14 @@ kind create cluster --name k8s-operators-lab --config kind-config.yaml
 
 ## Ferramentas de Desenvolvimento
 
-1. Kubectl:
+### Kubectl
 
 ```bash
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ```
 
-2. Kubebuilder:
+### Kubebuilder
 
 ```bash
 curl -L -o kubebuilder https://go.kubebuilder.io/dl/latest/$(go env GOOS)/$(go env GOARCH)
@@ -109,7 +123,7 @@ chmod +x kubebuilder
 sudo mv kubebuilder /usr/local/bin/
 ```
 
-3. Kustomize:
+### Kustomize
 
 ```bash
 KUSTOMIZE_VERSION=$(curl -s https://api.github.com/repos/kubernetes-sigs/kustomize/releases/latest | jq -r .tag_name)
@@ -119,35 +133,8 @@ tar xzf kustomize.tar.gz
 sudo mv kustomize /usr/local/bin/
 ```
 
-4. Tilt:
+### Tilt
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
 ```
-
-## Validação
-
-Verificar instalações:
-
-```bash
-go version
-docker --version
-kind version
-kubectl version --client
-kubebuilder version
-kustomize version --short
-tilt version
-```
-
-## Considerações de Segurança
-
-1. Acesso root necessário para:
-   - Instalação de pacotes
-   - Configuração do Docker
-   - Configuração de binários em /usr/local/bin
-
-2. Portas utilizadas:
-   - 5001: Registry local
-   - 8080: Ingress HTTP
-   - 8443: Ingress HTTPS
-   - 6443: API Kubernetes

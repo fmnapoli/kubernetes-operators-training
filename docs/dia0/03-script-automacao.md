@@ -1,28 +1,31 @@
 # Script de Automação do Ambiente
 
-## Sobre o Script
+## Visão Geral
 
-O script `setup-ambiente.sh` automatiza a instalação e configuração de todo o ambiente necessário para desenvolvimento de Operators.
+O script `setup-ambiente.sh` automatiza a instalação e configuração do ambiente de desenvolvimento Kubernetes.
 
 ## Funcionalidades
 
-1. Instalação de Componentes
-   - Go toolchain e ambiente
-   - Docker Engine
-   - Kind e registry local
-   - Ferramentas de desenvolvimento
+### Instalação de Componentes
 
-2. Configuração de Ambiente
-   - Registry local integrado com Kind
-   - Cluster Kubernetes configurado
-   - Permissões e variáveis de ambiente
+- Go toolchain e ambiente
+- Docker Engine
+- Kind e registry local
+- Ferramentas de desenvolvimento
 
-3. Validação e Logging
-   - Verificação de cada etapa
-   - Logs coloridos e timestamps
-   - Tratamento de erros
+### Configuração de Ambiente
 
-## Estrutura do Script
+- Registry local integrado com Kind
+- Cluster Kubernetes configurado
+- Permissões e variáveis de ambiente
+
+### Validação e Logging
+
+- Verificação de cada etapa
+- Logs coloridos e timestamps
+- Tratamento de erros
+
+## Fluxo de Execução
 
 ```mermaid
 graph TD
@@ -35,22 +38,22 @@ graph TD
     G --> H[Validar Ambiente]
 ```
 
-## Uso do Script
+## Uso
 
-1. Download:
+### Download e Instalação
 
 ```bash
 curl -O https://raw.githubusercontent.com/fmnapoli/kubernetes-operators-training/main/scripts/setup-ambiente.sh
 chmod +x setup-ambiente.sh
 ```
 
-2. Execução:
+### Execução
 
 ```bash
 ./setup-ambiente.sh
 ```
 
-3. Variáveis Configuráveis:
+### Variáveis Configuráveis
 
 ```bash
 REG_NAME='kind-registry'    # Nome do registry
@@ -58,40 +61,40 @@ REG_PORT='5001'            # Porta do registry
 CLUSTER_NAME='k8s-operators-lab'  # Nome do cluster
 ```
 
-## Logs e Debugging
+## Logs e Debug
 
-O script usa cores para diferentes tipos de log:
+### Níveis de Log
 
-- 🔵 INFO: Informações gerais
-- 🟢 SUCESSO: Operação concluída
-- 🟡 AVISO: Atenção necessária
-- 🔴 ERRO: Falha na operação
+- INFO (🔵): Informações gerais
+- SUCESSO (🟢): Operação concluída
+- AVISO (🟡): Atenção necessária  
+- ERRO (🔴): Falha na operação
 
-Exemplo de saída:
+### Exemplo de Saída
 
-```
+```bash
 [2024-01-07 10:15:30] [INFO] Iniciando setup do ambiente...
 [2024-01-07 10:15:35] [SUCESSO] Go instalado
 [2024-01-07 10:15:40] [AVISO] Shell não suportado: fish
 ```
 
-## Troubleshooting
+### Solução de Problemas
 
-1. Porta em uso:
+#### Porta em Uso
 
 ```bash
 sudo lsof -i :5001  # Verificar processo usando a porta
 sudo kill -9 PID    # Matar processo se necessário
 ```
 
-2. Docker sem permissão:
+#### Docker sem Permissão
 
 ```bash
 sudo usermod -aG docker $USER
 newgrp docker
 ```
 
-3. Registry não conectado:
+#### Registry não Conectado
 
 ```bash
 docker network connect kind kind-registry
@@ -99,9 +102,12 @@ docker network connect kind kind-registry
 
 ## Limpeza
 
-Para remover ambiente:
+### Remoção do Ambiente
 
 ```bash
+# Remove cluster Kind
 kind delete cluster --name k8s-operators-lab
+
+# Remove registry local
 docker rm -f kind-registry
 ```
