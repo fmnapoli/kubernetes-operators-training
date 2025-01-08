@@ -12,13 +12,11 @@
         <meta name="author" content="Fabrizio Malta Di Napoli">
       
       
-        <link rel="canonical" href="https://fmnapoli.github.io/kubernetes-operators-training/dias/dia3/">
+      
+        <link rel="prev" href="../..">
       
       
-        <link rel="prev" href="../dia2/">
-      
-      
-        <link rel="next" href="../dia4/">
+        <link rel="next" href="../02-instalacao-manual/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,14 +24,11 @@
     
     
       
-        <title>Dia 3 - CRDs - Treinamento Kubernetes Operators com Go</title>
+        <title>Introdução - Treinamento Kubernetes Operators com Go</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -62,20 +57,18 @@
   </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#dia-0-preparacao-do-ambiente" class="md-skip">
+          Pular para conteúdo
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -85,7 +78,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../.." title="Treinamento Kubernetes Operators com Go" class="md-header__button md-logo" aria-label="Treinamento Kubernetes Operators com Go" data-md-component="logo">
       
@@ -107,38 +102,12 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dia 3 - CRDs
+              Introdução
             
           </span>
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
-      </label>
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -206,86 +175,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../dia1/" class="md-tabs__link">
-          
-  
-  Dias
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../exemplos/" class="md-tabs__link">
-        
-  
-    
-  
-  Exemplos
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../exercicios/" class="md-tabs__link">
-        
-  
-    
-  
-  Exercícios
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -299,10 +188,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Treinamento Kubernetes Operators com Go" class="md-nav__button md-logo" aria-label="Treinamento Kubernetes Operators com Go" data-md-component="logo">
       
@@ -362,9 +249,6 @@
         
         
       
-      
-        
-      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
@@ -378,7 +262,7 @@
             
   
   <span class="md-ellipsis">
-    Dias
+    Setup
   </span>
   
 
@@ -388,51 +272,9 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Dias
+            Setup
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dia 1 - Fundamentos
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dia 2 - Client-go
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -447,16 +289,144 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Dia 3 - CRDs
+    Introdução
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-de-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos de Hardware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-do-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes do Ambiente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Componentes do Ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-toolchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Toolchain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Runtime
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes Local
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas de Desenvolvimento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacao-da-instalacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificação da Instalação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas Comuns
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -470,11 +440,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../dia4/" class="md-nav__link">
+      <a href="../02-instalacao-manual/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dia 4 - Controller Runtime
+    Instalação Manual
   </span>
   
 
@@ -491,11 +461,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../dia5/" class="md-nav__link">
+      <a href="../03-script-automacao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dia 5 - Testes e Deploy
+    Script de Automação
   </span>
   
 
@@ -512,95 +482,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../dia6/" class="md-nav__link">
+      <a href="../04-validacao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dia 6 - Tópicos Avançados
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia7/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dia 7 - Boas Práticas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia8/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dia 8 - Ferramentas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia9/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dia 9 - Produção
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia10/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dia 10 - Projeto Final
+    Validação
   </span>
   
 
@@ -623,12 +509,52 @@
   
   
   
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../exemplos/" class="md-nav__link">
+      <a href="../../dia1/01-introducao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Exemplos
+    Introdução
   </span>
   
 
@@ -636,23 +562,53 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../../exercicios/" class="md-nav__link">
+      <a href="../../dia1/02-api-kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Exercícios
+    API Kubernetes
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dia1/03-pratica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prática
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -674,6 +630,112 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-de-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos de Hardware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentes-do-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes do Ambiente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Componentes do Ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-toolchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Toolchain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Runtime
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes Local
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas de Desenvolvimento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos Passos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacao-da-instalacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificação da Instalação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas Comuns
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -691,9 +753,68 @@
   
 
 
-  <h1>Dia 3 - CRDs</h1>
-
-
+<h1 id="dia-0-preparacao-do-ambiente">Dia 0 - Preparação do Ambiente</h1>
+<h2 id="visao-geral">Visão Geral</h2>
+<p>Para desenvolver Operators Kubernetes precisamos de um ambiente completo que inclui:</p>
+<ul>
+<li>Linguagem de programação (Go)</li>
+<li>Container runtime (Docker)</li>
+<li>Cluster Kubernetes local (Kind)</li>
+<li>Registry local para imagens</li>
+<li>Ferramentas de desenvolvimento</li>
+</ul>
+<h2 id="requisitos-de-hardware">Requisitos de Hardware</h2>
+<ul>
+<li>CPU: 4+ cores</li>
+<li>RAM: 8GB+</li>
+<li>Disco: 20GB+ livre</li>
+<li>Sistema: Ubuntu/Debian</li>
+</ul>
+<h2 id="componentes-do-ambiente">Componentes do Ambiente</h2>
+<h3 id="go-toolchain">Go Toolchain</h3>
+<ul>
+<li>Compilador Go</li>
+<li>Ferramentas de teste e build</li>
+<li>GOPATH configurado</li>
+</ul>
+<h3 id="container-runtime">Container Runtime</h3>
+<ul>
+<li>Docker Engine</li>
+<li>Acesso ao Docker Hub</li>
+<li>Grupo docker configurado</li>
+</ul>
+<h3 id="kubernetes-local">Kubernetes Local</h3>
+<ul>
+<li>Kind (Kubernetes in Docker)</li>
+<li>Registry local integrado</li>
+<li>Kubectl CLI</li>
+</ul>
+<h3 id="ferramentas-de-desenvolvimento">Ferramentas de Desenvolvimento</h3>
+<ul>
+<li>Kubebuilder: Framework para operators</li>
+<li>Kustomize: Gerenciamento de configuração K8s</li>
+<li>Tilt: Hot reload para desenvolvimento</li>
+</ul>
+<h2 id="proximos-passos">Próximos Passos</h2>
+<ol>
+<li><a href="../02-instalacao-manual/">Instalação Manual</a></li>
+<li><a href="../03-script-automacao/">Script Automatizado</a></li>
+<li><a href="../04-validacao/">Validação do Ambiente</a></li>
+</ol>
+<h2 id="verificacao-da-instalacao">Verificação da Instalação</h2>
+<p>Para validar se o ambiente foi configurado corretamente, utilize os scripts fornecidos na pasta <code>scripts/</code>:</p>
+<ul>
+<li><code>setup-ambiente.sh</code>: Instala e configura todos os componentes</li>
+<li><code>validate-env.sh</code>: Valida a instalação e funcionamento do ambiente</li>
+</ul>
+<h2 id="problemas-comuns">Problemas Comuns</h2>
+<p>Caso encontre problemas durante a instalação:</p>
+<ol>
+<li>Verifique os logs de erro</li>
+<li>Consulte a documentação oficial de cada ferramenta</li>
+<li>Verifique permissões de usuário</li>
+<li>Valide requisitos de sistema</li>
+</ol>
 
 
 
@@ -756,7 +877,7 @@
       
       
     
-    <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+    <a href="https://linkedin.com/in/fabrizio-napoli" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
     </a>
   
@@ -772,7 +893,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "content.code.copy", "navigation.top", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>

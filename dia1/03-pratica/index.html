@@ -12,13 +12,9 @@
         <meta name="author" content="Fabrizio Malta Di Napoli">
       
       
-        <link rel="canonical" href="https://fmnapoli.github.io/kubernetes-operators-training/dias/dia2/">
       
+        <link rel="prev" href="../02-api-kubernetes/">
       
-        <link rel="prev" href="../dia1/">
-      
-      
-        <link rel="next" href="../dia3/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,14 +22,11 @@
     
     
       
-        <title>Dia 2 - Client-go - Treinamento Kubernetes Operators com Go</title>
+        <title>Prática - Treinamento Kubernetes Operators com Go</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -62,20 +55,18 @@
   </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#pratica-com-a-api-kubernetes" class="md-skip">
+          Pular para conteúdo
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -85,7 +76,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../.." title="Treinamento Kubernetes Operators com Go" class="md-header__button md-logo" aria-label="Treinamento Kubernetes Operators com Go" data-md-component="logo">
       
@@ -107,38 +100,12 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dia 2 - Client-go
+              Prática
             
           </span>
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
-      </label>
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -206,86 +173,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../dia1/" class="md-tabs__link">
-          
-  
-  Dias
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../exemplos/" class="md-tabs__link">
-        
-  
-    
-  
-  Exemplos
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../exercicios/" class="md-tabs__link">
-        
-  
-    
-  
-  Exercícios
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -299,10 +186,8 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Treinamento Kubernetes Operators com Go" class="md-nav__button md-logo" aria-label="Treinamento Kubernetes Operators com Go" data-md-component="logo">
       
@@ -351,10 +236,8 @@
       
   
   
-    
   
   
-  
     
     
     
@@ -362,33 +245,30 @@
         
         
       
-      
-        
-      
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Dias
+    Setup
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Dias
+            Setup
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -399,11 +279,165 @@
   
   
     <li class="md-nav__item">
-      <a href="../dia1/" class="md-nav__link">
+      <a href="../../dia0/01-introducao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dia 1 - Fundamentos
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dia0/02-instalacao-manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalação Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dia0/03-script-automacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Script de Automação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dia0/04-validacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introducao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-api-kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Kubernetes
   </span>
   
 
@@ -426,185 +460,118 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Prática
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Dia 2 - Client-go
+    Prática
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia3/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Dia 3 - CRDs
-  </span>
-  
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
   
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../dia4/" class="md-nav__link">
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interagindo-com-a-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interagindo com a API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interagindo com a API">
+      <ul class="md-nav__list">
         
+          <li class="md-nav__item">
+  <a href="#usando-kubectl-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando kubectl proxy
+    </span>
+  </a>
   
-  <span class="md-ellipsis">
-    Dia 4 - Controller Runtime
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia5/" class="md-nav__link">
+</li>
         
+          <li class="md-nav__item">
+  <a href="#listando-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listando Recursos
+    </span>
+  </a>
   
-  <span class="md-ellipsis">
-    Dia 5 - Testes e Deploy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia6/" class="md-nav__link">
+</li>
         
+          <li class="md-nav__item">
+  <a href="#criando-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando Recursos
+    </span>
+  </a>
   
-  <span class="md-ellipsis">
-    Dia 6 - Tópicos Avançados
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia7/" class="md-nav__link">
+</li>
         
+          <li class="md-nav__item">
+  <a href="#obtendo-detalhes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtendo Detalhes
+    </span>
+  </a>
   
-  <span class="md-ellipsis">
-    Dia 7 - Boas Práticas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia8/" class="md-nav__link">
+</li>
         
+          <li class="md-nav__item">
+  <a href="#deletando-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deletando Recursos
+    </span>
+  </a>
   
-  <span class="md-ellipsis">
-    Dia 8 - Ferramentas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia9/" class="md-nav__link">
+</li>
         
+      </ul>
+    </nav>
   
-  <span class="md-ellipsis">
-    Dia 9 - Produção
-  </span>
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercícios
+    </span>
+  </a>
   
-
-      </a>
-    </li>
+</li>
+      
+    </ul>
   
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dia10/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dia 10 - Projeto Final
-  </span>
-  
-
-      </a>
+</nav>
+      
     </li>
   
 
@@ -613,46 +580,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exemplos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exemplos
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exercicios/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercícios
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -674,6 +601,85 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interagindo-com-a-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interagindo com a API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interagindo com a API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usando-kubectl-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando kubectl proxy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listando-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listando Recursos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criando Recursos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtendo-detalhes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtendo Detalhes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletando-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deletando Recursos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercícios
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -691,9 +697,86 @@
   
 
 
-  <h1>Dia 2 - Client-go</h1>
+<h1 id="pratica-com-a-api-kubernetes">Prática com a API Kubernetes</h1>
+<h2 id="interagindo-com-a-api">Interagindo com a API</h2>
+<h3 id="usando-kubectl-proxy">Usando kubectl proxy</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Inicia o proxy</span>
+kubectl<span class="w"> </span>proxy<span class="w"> </span>--port<span class="o">=</span><span class="m">8080</span>
 
+<span class="c1"># Em outro terminal</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">API_URL</span><span class="o">=</span>http://localhost:8080
+</code></pre></div>
+<h3 id="listando-recursos">Listando Recursos</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Via curl</span>
+curl<span class="w"> </span><span class="nv">$API_URL</span>/api/v1/namespaces/default/pods
 
+<span class="c1"># Equivalente kubectl</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default
+</code></pre></div>
+<h3 id="criando-recursos">Criando Recursos</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># pod.yaml</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Via curl</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="nv">$API_URL</span>/api/v1/namespaces/default/pods<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/yaml&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-binary<span class="w"> </span>@pod.yaml
+
+<span class="c1"># Equivalente kubectl</span>
+kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>pod.yaml
+</code></pre></div>
+<h3 id="obtendo-detalhes">Obtendo Detalhes</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Via curl</span>
+curl<span class="w"> </span><span class="nv">$API_URL</span>/api/v1/namespaces/default/pods/nginx
+
+<span class="c1"># Equivalente kubectl</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>nginx<span class="w"> </span>-o<span class="w"> </span>yaml
+</code></pre></div>
+<h3 id="deletando-recursos">Deletando Recursos</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Via curl</span>
+curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="nv">$API_URL</span>/api/v1/namespaces/default/pods/nginx
+
+<span class="c1"># Equivalente kubectl</span>
+kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>nginx
+</code></pre></div>
+<h2 id="exercicios">Exercícios</h2>
+<ol>
+<li>Configure o ambiente:</li>
+<li>Instale kubectl</li>
+<li>Configure acesso a um cluster (minikube/kind)</li>
+<li>
+<p>Teste conectividade</p>
+</li>
+<li>
+<p>Crie recursos básicos:</p>
+</li>
+<li>Pod com Nginx</li>
+<li>Deployment com 3 réplicas</li>
+<li>
+<p>Service expondo o deployment</p>
+</li>
+<li>
+<p>Pratique debugging:</p>
+</li>
+<li>Use kubectl describe</li>
+<li>Verifique logs</li>
+<li>
+<p>Examine eventos</p>
+</li>
+<li>
+<p>Faça chamadas API diretas:</p>
+</li>
+<li>Liste pods via API</li>
+<li>Crie um deployment via API</li>
+<li>Delete recursos via API</li>
+</ol>
 
 
 
@@ -756,7 +839,7 @@
       
       
     
-    <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+    <a href="https://linkedin.com/in/fabrizio-napoli" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
     </a>
   
@@ -772,7 +855,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "content.code.copy", "navigation.top", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
