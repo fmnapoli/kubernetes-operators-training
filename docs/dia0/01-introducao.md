@@ -5,7 +5,7 @@
 Para desenvolver Operators Kubernetes precisamos de um ambiente completo que inclui:
 
 - Linguagem de programação (Go)
-- Container runtime (Docker) 
+- Container runtime (Docker)
 - Cluster Kubernetes local (Kind)
 - Registry local para imagens
 - Ferramentas de desenvolvimento
@@ -13,28 +13,32 @@ Para desenvolver Operators Kubernetes precisamos de um ambiente completo que inc
 ## Requisitos de Hardware
 
 - CPU: 4+ cores
-- RAM: 8GB+ 
+- RAM: 8GB+
 - Disco: 20GB+ livre
 - Sistema: Ubuntu/Debian
 
 ## Componentes do Ambiente
 
 ### Go Toolchain
+
 - Compilador Go
 - Ferramentas de teste e build
 - GOPATH configurado
 
 ### Container Runtime
-- Docker Engine 
+
+- Docker Engine
 - Acesso ao Docker Hub
 - Grupo docker configurado
 
 ### Kubernetes Local
+
 - Kind (Kubernetes in Docker)
-- Registry local integrado 
+- Registry local integrado
 - Kubectl CLI
 
 ### Ferramentas de Desenvolvimento
+
 - Kubebuilder: Framework para operators
 - Kustomize: Gerenciamento de configuração K8s
 - Tilt: Hot reload para desenvolvimento
