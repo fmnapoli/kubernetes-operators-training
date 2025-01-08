@@ -1,5 +1,7 @@
 # Validação do Ambiente
 
+O script [validate-env.sh](scripts/validate-env.sh) automatiza a validação do ambiente de desenvolvimento Kubernetes.
+
 ## Testes de Componentes
 
 ### Go

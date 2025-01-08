@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-O script `setup-ambiente.sh` automatiza a instalação e configuração do ambiente de desenvolvimento Kubernetes.
+O script [setup-ambiente.sh](scripts/setup-ambiente.sh) automatiza a instalação e configuração do ambiente de desenvolvimento Kubernetes.
 
 ## Funcionalidades
 
