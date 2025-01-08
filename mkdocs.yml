@@ -12,6 +12,7 @@ theme:
     - navigation.top
     - search.suggest
     - search.highlight
+    - navigation.indexes
 
 markdown_extensions:
   - pymdownx.highlight
@@ -32,19 +33,13 @@ plugins:
   - mermaid2
 
 nav:
-  - Home: index.md
-  - Setup:
+  - Início: index.md
+  - Dia 0 - Setup:
     - Introdução: dia0/01-introducao.md
     - Instalação Manual: dia0/02-instalacao-manual.md
-    - Script de Automação: dia0/03-script-automacao.md 
+    - Script de Automação: dia0/03-script-automacao.md
     - Validação: dia0/04-validacao.md
-  - Fundamentos:
+  - Dia 1 - Fundamentos:
     - Introdução: dia1/01-introducao.md
     - API Kubernetes: dia1/02-api-kubernetes.md
     - Prática: dia1/03-pratica.md
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/fmnapoli
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/fabrizio-napoli    

@@ -7,58 +7,44 @@ Bem-vindo ao treinamento self-paced de desenvolvimento de Operators Kubernetes u
 Este treinamento foi desenvolvido para capacitar desenvolvedores a construir e implantar Operators Kubernetes,
 abordando desde conceitos básicos até tópicos avançados.
 
+## Conteúdo Atual
+
+### Dia 0 - Setup do Ambiente
+
+- [Introdução](dia0/01-introducao.md)
+- [Instalação Manual](dia0/02-instalacao-manual.md)
+- [Script de Automação](dia0/03-script-automacao.md)
+- [Validação do Ambiente](dia0/04-validacao.md)
+
+### Dia 1 - Fundamentos Kubernetes
+
+- [Introdução](dia1/01-introducao.md)
+- [API Kubernetes](dia1/02-api-kubernetes.md)
+- [Prática](dia1/03-pratica.md)
+
 ## Pré-requisitos
 
-- Conhecimento de Go:
-  - Sintaxe básica
-  - Estruturas de dados
-  - Goroutines e channels
-  - Testes unitários
-  
-- Familiaridade com Kubernetes:
-  - Pods e deployments
-  - Services
-  - Conceitos de control plane
-  - kubectl básico
+### Conhecimento de Go
 
-## Estrutura do Curso
+- Sintaxe básica
+- Estruturas de dados
+- Goroutines e channels
+- Testes unitários
 
-O treinamento está organizado em 3 módulos principais:
+### Familiaridade com Kubernetes
 
-### Módulo 1: Fundamentos (Dias 1-4)
-
-- Arquitetura Kubernetes
-- APIs e recursos
-- Client-go
-- Controllers e CRDs
-
-### Módulo 2: Desenvolvimento (Dias 5-7)
-
-- Controller Runtime
-- Testes e debugging
-- Webhooks e validação
-- Boas práticas
-
-### Módulo 3: Produção (Dias 8-10)
-
-- Ferramentas e SDKs
-- Operadores em produção
-- Monitoramento
-- Projeto final
+- Pods e deployments
+- Services
+- Conceitos de control plane
+- kubectl básico
 
 ## Como Usar
 
-1. Cada dia possui:
-   - Material teórico
-   - Exemplos práticos
-   - Exercícios
+1. **Setup**:
+   - Complete o [setup do ambiente](dia0/01-introducao.md)
+   - Valide a instalação
 
-2. Recomendações:
-   - Faça os exercícios
-   - Explore os exemplos
-   - Mantenha um cluster de testes
-   - Use os recursos complementares
-
-## Começando
-
-Para iniciar o treinamento, navegue para [Dia 1 - Introdução](dia1/01-introducao.md).
+2. **Fundamentos**:
+   - Aprenda sobre a [API Kubernetes](dia1/02-api-kubernetes.md)
+   - Faça os exercícios práticos
+   - Valide o aprendizado
